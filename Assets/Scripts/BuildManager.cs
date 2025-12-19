@@ -8,22 +8,29 @@ public class BuildManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.Log("more than building manager in scene");
+            return;
         }
         instance = this;
     }
 
     public GameObject standardTurretPrefab;
+    public GameObject anothersTurretPrefab;
 
-    private void Start()
-    {
-        turretToBuild = standardTurretPrefab;  
-    }
+
+    //private void Start()
+    //{
+    //    turretToBuild = standardTurretPrefab;  
+    //}
 
     private GameObject turretToBuild;
 
     public GameObject GetTurretToBuild()
     {
         return turretToBuild;
+    }
+
+    public void SetTurretToBuild(GameObject turret)
+    {
+        turretToBuild = turret;
     }
 }
