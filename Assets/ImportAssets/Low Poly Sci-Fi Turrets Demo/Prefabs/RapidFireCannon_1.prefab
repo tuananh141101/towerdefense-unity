@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2592771251080028333
+--- !u!1 &5814645677974164585
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 567867264516343103}
+  - component: {fileID: 1482212031850968878}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -16,20 +16,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &567867264516343103
+--- !u!4 &1482212031850968878
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592771251080028333}
+  m_GameObject: {fileID: 5814645677974164585}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 7.212364e-11, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.201, z: 0.89}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2055021450706010243}
+  m_Father: {fileID: 5823700304144970697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6600623658154420595
 GameObject:
@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 5823700304144970697}
   - component: {fileID: 7457445342119345260}
   - component: {fileID: 4655275396415801510}
-  - component: {fileID: 5670049576885995178}
+  - component: {fileID: 3469269574195391223}
   m_Layer: 0
-  m_Name: StandardTurret
+  m_Name: RapidFireCannon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2055021450706010243}
+  - {fileID: 1482212031850968878}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7457445342119345260
@@ -116,7 +117,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5670049576885995178
+--- !u!114 &3469269574195391223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,8 +135,8 @@ MonoBehaviour:
   enemyTag: Enemy
   partToRotate: {fileID: 2055021450706010243}
   turnSpeed: 10
-  bulletPrefab: {fileID: 368741234726947644, guid: 3970dcc141264c34b89d210d3d68a5b7, type: 3}
-  firePoint: {fileID: 567867264516343103}
+  bulletPrefab: {fileID: 3131025519061763086, guid: 3fdbcd9e39d901e4ea95185751840515, type: 3}
+  firePoint: {fileID: 1482212031850968878}
 --- !u!1001 &1949599465469814632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,18 +148,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -7.212364e-11
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -210,10 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 567867264516343103}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9359234e1495fb64eae2e8f9138d88fd, type: 3}
 --- !u!4 &2055021450706010243 stripped

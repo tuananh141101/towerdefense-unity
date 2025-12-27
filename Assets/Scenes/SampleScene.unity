@@ -2796,7 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 6600623658154420595, guid: 374c6ba29fb69ea4b9065368a821b03d, type: 3}
-  anothersTurretPrefab: {fileID: 0}
+  anothersTurretPrefab: {fileID: 2507857462180137906, guid: 4b4461f01395c5e44a0db5e4e2876a1a, type: 3}
 --- !u!1 &386586586
 GameObject:
   m_ObjectHideFlags: 0
@@ -15656,6 +15656,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4658958966257081954, guid: 8deb5b3d6f25f4743ad231d6099ba273, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8bf1ea2fdb08224faa3be9e82d1e399, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

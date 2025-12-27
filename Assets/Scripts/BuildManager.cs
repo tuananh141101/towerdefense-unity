@@ -16,7 +16,6 @@ public class BuildManager : MonoBehaviour
     public GameObject standardTurretPrefab;
     public GameObject anothersTurretPrefab;
 
-
     //private void Start()
     //{
     //    turretToBuild = standardTurretPrefab;  
