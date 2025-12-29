@@ -10,8 +10,6 @@ public class CameraControl : MonoBehaviour
     public float minY = 10f;
     public float maxY = 80f;
 
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) doMovement = !doMovement;

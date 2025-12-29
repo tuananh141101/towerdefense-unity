@@ -62,6 +62,11 @@ public class Bullet : MonoBehaviour
     void Damage (Transform enemy)
     {
         Destroy(enemy.gameObject);
-        Debug.Log("Damage: " + enemy.name);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
