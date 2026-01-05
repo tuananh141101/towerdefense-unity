@@ -13,6 +13,13 @@ public class Turret : MonoBehaviour
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
 
+    [Header("Unity Setup Laser")]
+    public bool userLaser = false;
+    public int damageOverTime = 35;
+
+    public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+
     public Transform partToRotate; //rotate theo enemy
     public float turnSpeed = 10f;
 
@@ -50,20 +57,60 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            if (userLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                }
+            }
 
+            return;
+        }
+        
+        LockOnTarget();
+
+        if (userLaser)
+        {
+            Laser();
+        } else
+        {
+            if (fireCountDown <= 0f)
+            {
+                Shoot();
+                fireCountDown = 1f / fireRate;
+            }
+            fireCountDown -= Time.deltaTime;
+        }
+    }
+
+    void LockOnTarget()
+    {
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
 
-        if (fireCountDown <= 0f)
+    void Laser()
+    {
+        target.GetComponent<Enemy>().TakeDamge(damageOverTime * Time.deltaTime);
+
+        if (!lineRenderer.enabled)
         {
-            Shoot();
-            fireCountDown = 1f / fireRate;
+            lineRenderer.enabled = true;
+            impactEffect.Play();
         }
 
-        fireCountDown -= Time.deltaTime;
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+        Vector3 dir = firePoint.position - target.position;
+        impactEffect.transform.position = target.position + dir.normalized;
+        impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void Shoot()

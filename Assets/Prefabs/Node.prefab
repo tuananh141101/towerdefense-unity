@@ -118,4 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b8b11000055f142a13600ef5d13e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: 0, z: 0}
   hoverColor: {r: 0.44314548, g: 0.40850836, b: 0.8018868, a: 0}
+  notEnoughMoney: {r: 0.745283, g: 0.090034075, b: 0.070309706, a: 0}
+  turret: {fileID: 0}
