@@ -101,15 +101,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1628180884067331764, guid: 503b96145caac0e49a8f493320ef70ec, type: 3}
   range: 15
-  fireRate: 1
+  turnSpeed: 10
   enemyTag: Enemy
-  userLaser: 1
+  partToRotate: {fileID: 9206677948524212971}
+  fireRate: 1
+  firePoint: {fileID: 4924600559185004501}
+  useLaser: 1
+  damageOverTime: 35
   lineRenderer: {fileID: 7527005824561324786}
   impactEffect: {fileID: 6460670649746736750}
-  partToRotate: {fileID: 9206677948524212971}
-  turnSpeed: 10
   bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 4924600559185004501}
 --- !u!120 &7527005824561324786
 LineRenderer:
   serializedVersion: 2
