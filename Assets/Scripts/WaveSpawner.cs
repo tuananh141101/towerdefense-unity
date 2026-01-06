@@ -32,6 +32,9 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave() //IEnumerator cho phep tam dung code roi chay tiep o frames sau 
     {
         waveIndex++;
+
+        PlayerStart.Rounds++;
+
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy();
